@@ -87,22 +87,23 @@ const PoolForm = () => {
       showDangerAlert("Please enter the UserID !");
     }
     
-    else if (selectedStocks.length === 0 ) {   //condition added 
+    else if (selectedStocks.length === 0 ) {  
       
       showDangerAlert("Stocks cannot be empty");
       return;
     }
     
-      else if (selectedStocks.length > 4) { 
-        // Task 2 : Step 2 out of 4: Edit this condition to not let the user select more than 4 stocks. 
+    // Task 2 : Step 2 out of 4: Edit this condition to not let the user select more than 4 stocks. 
+      else if (selectedStocks.length > 4) {
       showDangerAlert("Hey! please select Stocks quantity less than 4 ");
       return;
     }
 
     let response = await joinPool({
-      user: "userID", // Task 1 : Step 3 out of 4: Add userID from the state to the payload.
+      user: "", // Task 1 : Step 3 out of 4: Add userID from the state to the payload.
       pool: selectedPool.value,
       stocks: selectedStocks.map((item) => item.value),
+      payload: userID
     });
 
     if (response.status === 201) {

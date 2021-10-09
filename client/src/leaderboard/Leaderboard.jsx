@@ -82,7 +82,7 @@ const Leaderboard = () => {
             {selectedPool !== null
               ? entries
                   .filter((entry) => entry.pool === selectedPool.value)
-                  .sort((a, b) => (a.returns > b.returns ? 1 : -1)) // Task 3 : Step 3 out of 3: Check whether the sorting condition is correct. This is you final task.
+                  .sort((a, b) => (a.returns > b.returns ? -1 : 1)) // Task 3 : Step 3 out of 3: Check whether the sorting condition is correct. This is you final task.
                   .map(
                     (entry, index) => 
                     null
